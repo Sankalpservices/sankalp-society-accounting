@@ -1,6 +1,0 @@
-/ src
-    / components
-        SocietySelector.js
-        SocietyMasterForm.js
-        BillingDashboard.js
-    App.js
