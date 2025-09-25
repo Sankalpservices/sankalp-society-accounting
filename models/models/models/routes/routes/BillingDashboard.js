@@ -1,3 +1,4 @@
+// src/components/BillingDashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,7 +10,7 @@ const BillingDashboard = ({ societyId }) => {
     }, [societyId]);
     return (
         <div>
-            <h2>Bills</h2>
+            <h2>Billing List</h2>
             <table>
                 <thead>
                     <tr>
@@ -35,4 +36,5 @@ const BillingDashboard = ({ societyId }) => {
         </div>
     );
 };
+
 export default BillingDashboard;
