@@ -1,12 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const societyRoutes = require('./routes/society');
-const billingRoutes = require('./routes/billing');
-const app = express();
+// src/App.js
+import React, { useState } from 'react';
+import SocietySelector from './components/SocietySelector';
+import BillingDashboard from './components/BillingDashboard';
 
-app.use(express.json());
-app.use('/api/society', societyRoutes);
-app.use('/api/billing', billingRoutes);
+function App() {
+    const [selectedSociety, setSelectedSociety] = useState(null);
+    return (
+        <div>
+            <h1>Accounting</h1>
+            <SocietySelector onSelect={setSelectedSociety} />
+            {selectedSociety && <BillingDashboard societyId={selectedSociety} />}
+        </div>
+    );
+}
 
-mongoose.connect('mongodb://localhost/sankalp', { useNewUrlParser: true, useUnifiedTopology: true });
-app.listen(5000, () => console.log('Server started'));
+export default App;
