@@ -1,9 +1,9 @@
-const express = require('express');
+const authRoutes = require('./routes/auth');\
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+app.use('/api/auth', authRoutes);
 app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/societydb', {
