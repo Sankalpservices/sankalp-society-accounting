@@ -1,0 +1,10 @@
+/ server
+    / models
+        Society.js
+        User.js
+        Bill.js
+    / routes
+        society.js
+        user.js
+        billing.js
+    app.js
