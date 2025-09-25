@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+mongoose.connection.on('error', err => { console.error('MongoDB error:', err); });
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true, required: true },
